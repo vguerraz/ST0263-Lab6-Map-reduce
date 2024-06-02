@@ -13,7 +13,7 @@ class AverageSalaryByEmpl(MRJob):
             total_salary += int(salary)
             count += 1
         average_salary_empl = total_salary / count
-        yield idemp, average_salary_emp
+        yield idemp, average_salary_empl
 
 if __name__ == '__main__':
     AverageSalaryByEmpl.run()
