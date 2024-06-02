@@ -3,12 +3,6 @@ from mrjob.step import MRStep
 
 class MoviesPerDay(MRJob):
 
-    def steps(self):
-        return [
-            MRStep(mapper=self.mapper_get_dates,
-                   reducer=self.reducer_count_dates)
-        ]
-
     def mapper_get_dates(self, _, line):
         user, movie, rating, genre, date = line.split(',')
         yield date, 1
